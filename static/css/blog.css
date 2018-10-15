@@ -41,8 +41,8 @@
 
         }
         .slideshow .dot>a.active{
-            background: #3333337d;
-            opacity: .6;
+            background: #000;
+            opacity: .9;
         }
         /* 加载的文章列表样式 */
         .main-left .main-title{

@@ -60,7 +60,12 @@ app.get("/blog/detial",function(request, response) {
     var path = 'blog_detial.html';
     sendHtml(path, response);
 })
-
+//获取plan
+app.get("/blog/plan",function(request, response) {
+  //console.log(request.query.id);
+  var path = 'blog_plan.html';
+  sendHtml(path, response);
+})
 
 var sendHtml = function(path, response) {
     var fs = require('fs')

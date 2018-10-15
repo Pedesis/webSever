@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,html{
+            height: 100%;
+        }
+        #id-wrap{
+            width: 40%;
+            height: 100%;
+            background: #a99a92;
+            margin: 0px auto auto auto;
+            border-radius: 20px;
+            box-shadow: 0 6px 30px 18px rgba(199, 199, 199, 0.75);
+            transition: transform 0.3s ease-in;
+        }
+
+        #id-wrap:hover{
+            transform: scale(1.01);
+        }
+
+        header{
+            box-sizing: border-box;
+            width: 100%;
+            height: 80px;
+            position: relative;
+            padding: 15px;
+            background: #b43f3f;
+            border-bottom-right-radius:10px;
+            border-bottom-left-radius:10px;
+            box-shadow: 0 2px 8px rgba(41, 10, 77,.5);
+        }
+        header input.search:focus{
+        background: rgba(35, 14, 87, 0.5);
+        }
+
+        header input.search{
+            width: 100%;
+            font-size: 16px;
+            height:50px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            float:left;
+            padding-right: 70px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.2);
+            border:none;
+            color:#fdfdfd;
+            text-indent: 2%;
+            outline:none;
+            appearance:none;
+            transition: all 0.5s ease;
+        }
+        header .add{
+            height: 50px;
+            position: absolute;
+            right: 15px;
+            width: 50px;
+            border:0px;
+            outline: 0px;
+            border-color:transparent;
+            outline-style: 0px;
+            border-radius: 50%;
+            background: white;
+            cursor:pointer;
+            z-index: 1;
+            box-shadow:  -2px 2px 5px rgba(41, 10, 77,.5);
+            transition: all 0.2s ease;
+        }
+        header .add img{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+        header .add:hover{
+        box-shadow: none;
+        transform: scale(0.9);
+        }
+        .content-item{
+            box-sizing: border-box;
+            height: 50px;
+            margin:15px;
+            background: #fff;
+            padding:15px;
+            border-radius:8px 0;
+            box-shadow: -2px 2px 4px rgba(41, 10, 77, .5);
+            opacity: 1;
+            color: #b43f3f;
+            
+        }
+        .content-item:hover{
+            transform: scale(0.995);
+            box-shadow: none;
+            background:rgb(255, 241, 219);
+        }
+        .content-item .item-con{
+            font-size: 16px;
+        }
+
+        .content-item  img{
+            width: 20px;
+            padding-right: 10px;
+            float: right;
+            cursor: pointer;
+            display:block;
+        }
+
+        .divier{
+            width: 50%;
+            margin: 20px auto 5px auto;
+            height: 1px;
+            background: #ccc;
+        }
+        .content-item.done {
+                background: rgb(212,204,200);
+                text-decoration: line-through;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="id-wrap">
+        <header>
+            <input type="text" placeholder="添加一个任务" class="search">
+            <div class="add"><img src="add.png" alt=""></div>
+        </header>
+        
+        <div id="id-content">
+            
+        </div>
+
+            <hr  class="divier" > 
+            <div id="id-done-content">
+    
+            </div>
+        </div>
+
+</body>
+<script>
+    window.onload = function () {
+        var _main = function () {
+            var contentNode = query("#id-wrap #id-content");
+            var doneContent=query("#id-wrap #id-done-content");
+            addContent();
+            //点击时函数
+            contentChange(contentNode,doneContent,true);
+            contentChange(contentNode,doneContent,false);
+            //存储
+            loadSave();
+            //更改图片地址
+            imgRender(contentNode);
+            imgRender(doneContent);
+        }
+        _main();
+    }
+    //简化console.log
+    var log = function () {
+        console.log.apply(console, arguments);
+    }
+    //简化querySelector
+    var query = function (name) {
+        return document.querySelector(name);
+    }
+    var queryAll= function (names) {
+        return document.querySelectorAll(names);
+    }
+    var addContent = function () {
+        //var wrapNode = query("#id-wrap #id-content");
+        var textNode = query("#id-wrap input:nth-child(1)");
+        var butNode = query("#id-wrap .add");
+        butNode.addEventListener("click", function () {
+            var val = textNode.value;
+            //var o = content(val);
+            //wrapNode.insertAdjacentHTML("beforeEnd", o);
+            //输入内容为空直接返回
+            if(val==""){
+                return ;
+            }
+            insertContent(val,false);
+            textNode.value="";
+            //存储的本地数据
+            localSave();
+        })
+    }
+    var insertContent=function(info,done){
+        var wrapNode = query("#id-wrap #id-content");
+        
+        // var textNode = query("#id-wrap>input:nth-child(1)");
+        // var val = textNode.value;
+         var o = content(info,done);
+        wrapNode.insertAdjacentHTML("beforeEnd", o);
+    }
+    //加载全部数据时引用
+    var insertDoneContent=function(info,done){
+        var wrapNode=query("#id-wrap #id-done-content");
+         var o = content(info,done);
+        wrapNode.insertAdjacentHTML("beforeEnd", o);
+    }
+    var contentChange = function (node1,node2,TF) {
+        if(TF){
+            node=node1;
+        }else{
+            node=node2;
+        }
+        node.addEventListener("click", function (e) {
+            var target = e.target;
+            //log(target.classList.contains("done"));    //判断是否存在
+            var parentDiv = target.parentNode;                //父节点
+            //log("parentDiv",parentDiv)
+            if (target.classList.contains("content-done")) {
+                toggleClass(parentDiv, "done");
+                if(parentDiv.classList.contains("done")){
+                    //appendChild可以直接移动
+                    if(node2.children.length<1){
+                        node2.appendChild(parentDiv);
+                    }else{
+                        
+                        //insert是向子节点前面，append父元素后面
+                        node2.insertBefore(parentDiv,node2.children[0]);
+                    }
+                    
+                }else{
+                    node1.appendChild(parentDiv);
+                }
+                localSave();
+            } else if (target.classList.contains("content-delete")) {
+                parentDiv.remove();
+                localSave();
+            }
+        })
+    }
+    //判断是否存在done
+    var toggleClass = function (element, className) {
+        if (element.classList.contains(className)) {
+            element.classList.remove(className);
+        } else {
+            element.classList.add(className);
+        }
+    }
+    var content = function (val,done) {
+        var status="";
+        src="yes.png";
+        if(done){
+            status="done";
+            src="yes-a.png";
+        }
+        var o = `<div class="content-item ${status}">
+                <span class="item-con information">${val}</span>
+               <img src="${src}" class="content-done"  alt="">
+                <img src="de-a.png" class="content-delete"  alt="">
+            </div>`
+        return o;
+    }
+    
+    var localSave=function(){
+        var arr=[];
+        var info=document.querySelectorAll(".information");
+        for(var i=0;i<info.length;i++){
+            var done=info[i].parentNode.classList.contains("done");
+            var arrSave={
+                done:done,
+                ins:info[i].innerHTML,
+            }
+            arr.push(arrSave);
+            //log(arr);
+        }
+        save(arr);
+    }
+    var loadSave=function(){
+        var loads=load();
+        for(var i=0;i<loads.length;i++){
+           // log(loads);
+        if(loads[i].done){
+            insertDoneContent(loads[i].ins,loads[i].done);
+        }else{
+            insertContent(loads[i].ins,loads[i].done);
+        }
+        
+        }
+    }
+    //定义一个函数， 用于把 数组 写入 localStorage
+    var save=function(arr){
+        var s=JSON.stringify(arr);
+        localStorage.pedesis=s;
+    }
+    // 定义一个函数， 读取 localStorage 中的数据并解析返回
+    var load = function() {
+    var s = localStorage.pedesis;
+    return JSON.parse(s);
+}
+
+//右侧图片加入移入移出效果
+var imgRender=function(node){
+    
+    node.addEventListener("mouseover",function(e){
+        var target = e.target;
+        var parentDiv = target.parentNode;  
+        if (target.classList.contains("content-done")) {
+                target.src="yes-a.png";
+            } else if (target.classList.contains("content-delete")) {
+                target.src="de-b.png";
+            }
+    })
+    node.addEventListener("mouseout",function(e){
+        var target = e.target;
+        var parentDiv = target.parentNode;  
+        if (target.classList.contains("content-done")) {
+                target.src="yes.png";
+                if(parentDiv.classList.contains("done")){
+                    target.src="yes-a.png";
+                }
+            } else if (target.classList.contains("content-delete")) {
+                target.src="de-a.png";
+            }
+    })
+   
+}
+
+</script>
+
+</html>
