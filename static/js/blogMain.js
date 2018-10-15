@@ -11,7 +11,7 @@ var blogTemplate = function(blog) {
     <div class="blog-cell">
     <div class="blog-cell-left">
         <a class="blog-cell-img" href="blog/detial?id=${id}" data-id="${id}">
-            <img src="https://qiniu.blog.quietguoguo.com/wp-content/uploads/2018/10/website2app-220x150.png">
+            <img src="https://pedesis.leanapp.cn/images/link-icon1.png">
         </a>
     </div>
     <div class="blog-cell-right">
