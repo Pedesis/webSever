@@ -1,0 +1,124 @@
+
+        /* 本页样式 */
+
+        /* 轮播图样式 */
+        .wrap{
+            width: 800px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slideshow ul{
+            width: 4000px;
+            height: 100%; 
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .slideshow ul li{
+            width: 800px; 
+            display: block;
+            float: left;
+        }
+        .slideshow ul li img{
+            width: 100%;
+        }
+        .slideshow .dot{
+            position: absolute;
+            bottom: 15px;
+            left:50%;
+            transform: translateX(-50%);
+            
+        }
+        .slideshow .dot>a{
+            width: 10px;
+            height: 10px;
+            display: block;
+            background: #fff;
+            float: left;
+            margin-right:10px;
+            border-radius: 50%;
+
+        }
+        .slideshow .dot>a.active{
+            background: #3333337d;
+            opacity: .6;
+        }
+        /* 加载的文章列表样式 */
+        .main-left .main-title{
+            margin: 15px 0;
+        }
+        .main-left .main-title span{
+            display:block;
+    
+            font-size: 15px;
+        }
+        .main-left .main-title span:nth-child(2){
+            color: gray;
+            font-size: 14px;
+        }
+        .main-left .main-title span.title{
+            float: left;
+            font-weight: bold;
+    
+        }
+        .main-left .main-title span.time{
+            float: right;
+        }
+    
+        #blog-content .blog-cell {
+                width: 800px;
+                height: 200px;
+                background: #FFF;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            #blog-content .blog-cell:hover{
+                border-radius: 4px;
+                box-shadow: 1px 3px 9px #ccc;
+                transition: .3s;
+            }
+            .blog-cell .blog-cell-left {
+                margin-top: 25px;
+                margin-left:10px;
+                float: left;
+                width: 220px;
+            }
+            .blog-cell-right{
+                margin-top: 25px;
+                float: right;
+                width: 550px;
+                margin-right:10px;
+            }
+            .blog-cell-title {
+                font-size: 16px;
+                font-weight: bold;
+                color: #3d3d3d;
+            }
+            .blog-cell-content{
+                line-height: 22px;
+                margin-top: 10px;
+                font-size: 13px;
+                height: 66px;
+                overflow: hidden;
+                position: relative;
+                color: #526163;
+            }
+            .blog-cell-content::after{
+                content: "..."; 
+                background: #FFF;
+                position: absolute;
+                bottom: 0; 
+                right: 0;
+                width: 150px;
+            }
+            .blog-cell-info {
+                margin-top: 15px;
+                font-size: 10px;
+                float: left;
+                color: #919898;
+            }
+            .blog-cell-info span{
+                padding-right: 20px;
+            }
+    

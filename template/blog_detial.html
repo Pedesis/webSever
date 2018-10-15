@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://localhost:3000/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/common.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/detial.css">
+
+</head>
+
+<body>
+    <header>
+        <a class="blog-name" href="/template/blog_home.html">Pedesis</a>
+        <span>blog</span>
+    </header>
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#">首页</a>
+                </li>
+                <li><a href="#">计划表</a>
+                </li>
+                <li><a href="#">技术分享</a>
+                </li>
+                <li><a href="#">生活笔记</a>
+                </li>
+                <li><a href="#">关于我</a>
+                </li>
+            </ul>
+            <div class="nav-input">
+                <input type="search" placeholder="搜索">
+                <img src="http://localhost:3000/images/search.png" alt="">
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="container">
+            <div class="main-left">
+                <div id="comment-content">
+                        <div class="blog-article">
+                                <div class="blog-place">
+                                    <span>您现在所在位置:</span>首页<span>&gt;</span>文章详情<span>&gt;
+                                    </div>
+                                    <h1>${title}</h1>
+                                    <div class="article-detial"><span>作者:${author}</span><span>时间:${time}</span></div>
+                                <div class="article-information">
+                                    <div>${content}</div>
+                                </div>
+                                <div class="arctile-agency">
+                                <p><span>版权声明:</span>本站原创文章，于${time},由${author}发表</p>
+                                <p><span>转载请注明:</span>${title}|Pedesis博客</p>
+                                </div>
+                            </div>
+                </div>
+                <div class="blog-comments">
+                    <div class='new-comment'>
+                        <input class='comment-blog-id' type=hidden value="${id}">
+                        <input class='comment-author' type=hidden value="">
+                        <textarea class="comment-content" ></textarea>
+                        <button class='comment-add'>添加评论</button>
+                    </div>
+                </div>
+                <div id="comment">
+                    <p class="comment-list">评论列表</p>
+                    <div class="all-comment">
+                        <img src="http://localhost:3000/images/cat.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="link-me beside-item">
+                    <h3>关注我</h3>
+                    <ul class="clearfix item-l">
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon2.png" alt="" srcset="">微博</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon3.png" alt="" srcset="">微信</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                    </ul>
+                </div>
+                <div class="recent-posts beside-item">
+                    <h3>最新文章</h3>
+                    <ol class="item-l" id="new-articles">
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="toTop">
+        <img src="/images/top.png">
+    </div>
+</body>
+<script src="http://localhost:3000/js/blogCommon.js"></script>
+<script>
+
+    //获取文章内容
+    var blogAll = function () {
+        var request = {
+            method: 'GET',
+            url: '/api/blog/all',
+            //contentType: 'application/json',
+            callback: function (response) {
+                console.log('响应', response);
+                var blogs = JSON.parse(response);
+                var blogs = JSON.parse(response).reverse();
+                window.blogs = blogs;
+                insertBlogBlog(blogs);
+            }
+        }
+        ajax(request)
+    }
+
+
+
+    //增加内容详情
+    var blogTemplate = function (blog) {
+        var id = blog.id;
+        var title = blog.title;
+        var author = blog.author;
+        var content = blog.content;
+        var d = new Date(blog.created_time * 1000)
+        var time = d.toLocaleString()
+        var t = `
+        <div class="blog-article">
+            <div class="blog-place">
+                <span>您现在所在位置:</span><a href="http://localhost:3000/">首页</a><span>&gt;</span>文章详情<span>&gt;
+                </div>
+                <h1>${title}</h1>
+                <div class="article-detial"><span>作者:${author}</span><span>时间:${time}</span></div>
+            <div class="article-information">
+                <div>${content}</div>
+            </div>
+            <div class="article-agency">
+            <p><span>版权声明:</span>本站原创文章，于${time},由${author}发表</p>
+            <p><span>转载请注明:</span>${title}|Pedesis博客</p>
+            </div>
+        </div>
+    `
+        return t
+    }
+    //评论已全部获取直接增加评论详情
+    var commentTemplate = function (comment) {
+        var t="";
+        var ts="";
+        
+        for(var i=0;i<comment.length;i++){
+            var title=comment[i].title;
+            var content=comment[i].content;
+            t=`
+            <div class="comment-cell"><img src="http://localhost:3000/images/cat.png" alt=""> 
+                <div class="cell-content">
+                <p>${title}</p>
+                <p>${content}</p>
+                </div>
+                
+                </div>
+           
+            
+            `
+            ts+=t;
+        }
+        
+        return ts;
+    }
+
+
+    var insertBlogBlog = function (blogs) {
+        var blogHtml = '';
+        for (var i = 0; i < blogs.length; i++) {
+            var id = window.location.search;
+            id = id.split("=")[1];
+            if (id == blogs[i].id) {
+                var b = blogs[i];
+                var t = blogTemplate(b);
+                var bc = b.comments;
+                
+                commentHtml = commentTemplate(bc);
+                blogHtml = t;
+            }
+
+
+        }
+        // 把数据写入 直接用覆盖式写入
+        var div = document.querySelector('#comment-content');
+        var comDiv = document.querySelector('#comment .all-comment');
+        div.innerHTML = blogHtml;
+        comDiv.innerHTML = commentHtml;
+    }
+    blogAll();
+    var commentAdd=findElement(".comment-add");
+    commentAdd.onclick=function(){
+        var commentContent=findElement(".comment-content");
+        var cc=commentContent.value;
+        var id = window.location.search;
+            id = id.split("=")[1];
+        var form={
+            title:"Pedesis",
+            content:cc,
+            blog_id:id,
+        }
+        commentContent.value="";
+        Addcomment(form);
+
+    }
+    //添加评论
+    var Addcomment = function (form) {
+        var data = JSON.stringify(form);
+        var request = {
+        method: 'POST',
+        url: '/api/comment/add',
+        data: data,
+        contentType: 'application/json',
+        callback: function(response) {
+            console.log('响应', response)
+            var res = JSON.parse(response)
+            window.location.reload();
+            if (res.success) {
+            
+                log("成功");
+            } else {
+                // alert('登录失败')
+                log("失败");
+            }
+        }
+    }
+        ajax(request)
+    }
+
+        //最新文章获取
+        var blogNewArticle=function(){
+        var newArticle=findElements("#new-articles li a");
+        for(var i=0;i<newArticle.length;i++){
+
+            log(blogs);
+            newArticle[i].innerText=blogs[i].title;
+            newArticle[i].href="http://localhost:3000/blog/detial?id="+blogs[i].id;
+        }
+    };
+    blogNewArticle();
+</script>
+
+</html>
