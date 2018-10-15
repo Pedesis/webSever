@@ -84,6 +84,13 @@
                 float: left;
                 width: 220px;
             }
+            .blog-cell .blog-cell-left .blog-cell-img img{
+                width: 220px;
+                height: 150px;
+            }
+            .blog-cell .blog-cell-left .blog-cell-img img:hover{
+                transform: scale(1.1);
+            }
             .blog-cell-right{
                 margin-top: 25px;
                 float: right;
