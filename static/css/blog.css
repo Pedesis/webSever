@@ -41,7 +41,7 @@
 
         }
         .slideshow .dot>a.active{
-            background: #000;
+            background: red;
             opacity: .9;
         }
         /* 加载的文章列表样式 */
