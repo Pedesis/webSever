@@ -1,6 +1,6 @@
         /* 公共样式 */
         header{
-            background:url(https://pedesis.leanapp.cn/images/main.png) no-repeat;
+            background:url(http://localhost:3000/images/main.png) no-repeat;
             height:150px;
         }
         .blog-name{

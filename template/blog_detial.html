@@ -6,34 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/common.css">
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/detial.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/common.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/detial.css">
 
 </head>
 
 <body>
     <header>
-        <!-- <a class="blog-name" href="https://pedesis.leanapp.cn/">Pedesis</a>
+        <!-- <a class="blog-name" href="http://localhost:3000/">Pedesis</a>
         <span>blog</span> -->
     </header>
     <nav>
         <div class="container nav-container">
             <ul>
-                <li><a href="https://pedesis.leanapp.cn/">首页</a>
+                <li><a href="http://localhost:3000/">首页</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/articles">技术文章</a>
+                <li><a href="http://localhost:3000/blog/articles">技术文章</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/write">写文章</a>
+                <li><a href="http://localhost:3000/blog/write">写文章</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/pc">pc项目</a>
+                <li><a href="http://localhost:3000/blog/pc">pc项目</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/plan">任务管理软件</a>
+                <li><a href="http://localhost:3000/blog/plan">任务管理软件</a>
                 </li>
             </ul>
             <div class="nav-input">
                 <input type="search" placeholder="搜索">
-                <img src="https://pedesis.leanapp.cn/images/search.png" alt="">
+                <img src="http://localhost:3000/images/search.png" alt="">
             </div>
         </div>
     </nav>
@@ -67,7 +67,7 @@
                 <div id="comment">
                     <p class="comment-list">评论列表</p>
                     <div class="all-comment">
-                        <img src="https://pedesis.leanapp.cn/images/cat.png" alt="">
+                        <img src="http://localhost:3000/images/cat.png" alt="">
                     </div>
                 </div>
             </div>
@@ -75,10 +75,10 @@
                 <div class="link-me beside-item">
                     <h3>关注我</h3>
                     <ul class="clearfix item-l">
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon2.png" alt="" srcset="">微博</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon3.png" alt="" srcset="">微信</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon2.png" alt="" srcset="">微博</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon3.png" alt="" srcset="">微信</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon4.png" alt="" srcset="">QQ</a></li>
                     </ul>
                 </div>
                 <div class="recent-posts beside-item">
@@ -109,7 +109,7 @@
         <img src="/images/top.png">
     </div>
 </body>
-<script src="https://pedesis.leanapp.cn/js/blogCommon.js"></script>
+<script src="http://localhost:3000/js/blogCommon.js"></script>
 <script>
 
     //获取文章内容
@@ -142,7 +142,7 @@
         var t = `
         <div class="blog-article">
             <div class="blog-place">
-                <span>您现在所在位置:</span><a href="https://pedesis.leanapp.cn/">首页</a><span>&gt;</span>文章详情<span>&gt;
+                <span>您现在所在位置:</span><a href="http://localhost:3000/">首页</a><span>&gt;</span>文章详情<span>&gt;
                 </div>
                 <h1>${title}</h1>
                 <div class="article-detial"><span>作者:${author}</span><span>时间:${time}</span></div>
@@ -166,7 +166,7 @@
             var title=comment[i].title;
             var content=comment[i].content;
             t=`
-            <div class="comment-cell"><img src="https://pedesis.leanapp.cn/images/cat.png" alt=""> 
+            <div class="comment-cell"><img src="http://localhost:3000/images/cat.png" alt=""> 
                 <div class="cell-content">
                 <p>${title}</p>
                 <p>${content}</p>
@@ -252,7 +252,7 @@
 
             log(blogs);
             newArticle[i].innerText=blogs[i].title;
-            newArticle[i].href="https://pedesis.leanapp.cn/blog/detial?id="+blogs[i].id;
+            newArticle[i].href="http://localhost:3000/blog/detial?id="+blogs[i].id;
         }
     };
     blogNewArticle();

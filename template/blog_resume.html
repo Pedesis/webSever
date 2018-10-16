@@ -27,13 +27,13 @@
          }
 
     </style>
-    <script src="https://pedesis.leanapp.cn/js/pdf.js" type="text/javascript"></script>
+    <script src="http://localhost:3000/js/pdf.js" type="text/javascript"></script>
     <script type="text/javascript">
         function showPdf() {
             var container = document.getElementById("container");
             container.style.display = "block";
-            var url = 'https://pedesis.leanapp.cn/images/yuanlidi-web-resume.pdf';
-            PDFJS.workerSrc = 'https://pedesis.leanapp.cn/js/pdf.worker.js';
+            var url = 'http://localhost:3000/images/yuanlidi-web-resume.pdf';
+            PDFJS.workerSrc = 'http://localhost:3000/js/pdf.worker.js';
             PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
                 pdf.getPage(1).then(function getPageHelloWorld(page) {
                     var scale = 1;

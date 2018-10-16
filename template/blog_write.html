@@ -5,63 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>写文章</title>
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/common.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/common.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/write.css" type="text/css">
 </head>
 <body>
     
         <header>
-                <!-- <a class="blog-name" href="https://pedesis.leanapp.cn/">袁立狄个人博客</a>
+                <!-- <a class="blog-name" href="http://localhost:3000/">袁立狄个人博客</a>
                 <span>blog</span> -->
             </header>
             <nav>
                 <div class="container nav-container">
                     <ul>
-                        <li><a href="https://pedesis.leanapp.cn/">首页</a>
+                        <li><a href="http://localhost:3000/">首页</a>
                         </li>
-                        <li><a href="https://pedesis.leanapp.cn/blog/articles">技术文章</a>
+                        <li><a href="http://localhost:3000/blog/articles">技术文章</a>
                         </li>
-                        <li><a href="https://pedesis.leanapp.cn/blog/write">写文章</a>
+                        <li><a href="http://localhost:3000/blog/write">写文章</a>
                         </li>
-                        <li><a href="https://pedesis.leanapp.cn/blog/pc">pc项目</a>
+                        <li><a href="http://localhost:3000/blog/pc">pc项目</a>
                         </li>
-                        <li><a href="https://pedesis.leanapp.cn/blog/plan">任务管理软件</a>
+                        <li><a href="http://localhost:3000/blog/plan">任务管理软件</a>
                         </li>
                     </ul>
                     <div class="nav-input">
                         <input type="search" placeholder="搜索">
-                        <img src="images/search.png" alt="">
+                        <img src="http://localhost:3000/images/search.png" alt="">
                     </div>
                 </div>
             </nav>
-    <h1>功能已完善，页面待美化</h1>
-    <div class="blog-new">
-        <label>
-            博文标题
-            <input id='id-input-title' type="text" value="">
-        </label>
-        <br>
-        <label>
-            博文作者
-            <input id='id-input-author' type="text" value="">
-        </label>
-        <br>
-        <label>
-            博文内容
-            <textarea id='id-input-content' type="text" value=""></textarea>
-        </label>
-        <br>
-        <!-- <label>
-            主人密码
-            <input id='id-input-mima' type="text" value="">
-        </label> -->
-        <br>
-        <button id='id-button-submit'>发表新博文</button>
+    <div class="main">
+        <div class="container">
+                <div class="blog-new">
+                        <label>
+                            博文标题:
+                            <input id='id-input-title' type="text" value="">
+                        </label>
+                        <br>
+                        <label>
+                            博文作者:
+                            <input id='id-input-author' type="text" value="">
+                        </label>
+                        <br>
+                        <label>
+                            博文内容:
+                            <textarea id='id-input-content' type="text" ></textarea>
+                        </label>
+                        <br>
+                        <!-- <label>
+                            主人密码
+                            <input id='id-input-mima' type="text" value="">
+                        </label> -->
+                        
+                        <button id='id-button-submit'>发表新博文</button>
+                    </div>
+                    <!-- <div class="gua-blogs">
+                    </div> -->
+        </div>
     </div>
-    <div class="gua-blogs">
-    </div>
+    
 </body>
-<!-- <script src="https://pedesis.leanapp.cn/js/blogCommon.js"></script> -->
+<!-- <script src="http://localhost:3000/js/blogCommon.js"></script> -->
 <script>
     var log=function(){
         console.log.apply(console,arguments);
@@ -121,6 +126,13 @@ var blogNew=function(form){
 var bindEvents=function(){
     var button=findElement("#id-button-submit");
     button.addEventListener("click",function(){
+        var title=findElement("#id-input-title").value;
+        var author=findElement("#id-input-author").value;
+        var content=findElement("#id-input-content").value;
+        if(title==""||author==""||content==""){
+            alert("请输入内容")
+            return;
+        }
         //log("button",1);
         var form={
             title:findElement("#id-input-title").value,
@@ -128,6 +140,9 @@ var bindEvents=function(){
             content:findElement("#id-input-content").value
         }
         blogNew(form);
+        findElement("#id-input-title").value="";
+        findElement("#id-input-author").value="";
+        findElement("#id-input-content").value="";
     })
     
 }

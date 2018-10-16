@@ -1,0 +1,33 @@
+html,body{
+    height: 100%;
+}
+.blog-new{
+    width: 800px;
+    margin: 0 auto;
+}
+.blog-new label{
+    margin-bottom: 10px;
+    display: block;
+}
+.blog-new label input{
+    border: 1px solid #398E9F;
+    outline: none;
+    width: 300px;
+    height: 30px;
+}
+.blog-new label textarea{
+    width: 700px;
+    height: 550px;
+    outline: none;
+    border: 1px solid #398E9F;
+}
+.blog-new #id-button-submit{
+    border: 1px solid #398E9F;
+    outline: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    display: block;
+    float: right;
+    margin-right: 20px;
+}

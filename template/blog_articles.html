@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pedesis个人博客</title>
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/common.css">
-    <link rel="stylesheet" href="https://pedesis.leanapp.cn/css/blog.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/common.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/blog.css">
     <style>
 
     </style>
@@ -18,26 +18,26 @@
 <body>
 
     <header>
-        <!-- <a class="blog-name" href="https://pedesis.leanapp.cn/">袁立狄个人博客</a>
+        <!-- <a class="blog-name" href="http://localhost:3000/">袁立狄个人博客</a>
         <span>blog</span> -->
     </header>
     <nav>
         <div class="container nav-container">
             <ul>
-                <li><a href="https://pedesis.leanapp.cn/">首页</a>
+                <li><a href="http://localhost:3000/">首页</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/articles">技术文章</a>
+                <li><a href="http://localhost:3000/blog/articles">技术文章</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/write">写文章</a>
+                <li><a href="http://localhost:3000/blog/write">写文章</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/pc">pc项目</a>
+                <li><a href="http://localhost:3000/blog/pc">pc项目</a>
                 </li>
-                <li><a href="https://pedesis.leanapp.cn/blog/plan">任务管理软件</a>
+                <li><a href="http://localhost:3000/blog/plan">任务管理软件</a>
                 </li>
             </ul>
             <div class="nav-input">
                 <input type="search" placeholder="搜索">
-                <img src="https://pedesis.leanapp.cn/images/search.png" alt="">
+                <img src="http://localhost:3000/images/search.png" alt="">
             </div>
         </div>
     </nav>
@@ -80,10 +80,10 @@
                 <div class="link-me beside-item">
                     <h3>关注我</h3>
                     <ul class="clearfix item-l">
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon2.png" alt="" srcset="">微博</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon3.png" alt="" srcset="">微信</a></li>
-                        <li><a href="#"><img src="https://pedesis.leanapp.cn/images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon2.png" alt="" srcset="">微博</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon3.png" alt="" srcset="">微信</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon4.png" alt="" srcset="">QQ</a></li>
                     </ul>
                 </div>
                 <div class="recent-posts beside-item">
@@ -111,15 +111,15 @@
 
     </div>
     <div class="toTop">
-        <img src="https://pedesis.leanapp.cn/images/top.png">
+        <img src="http://localhost:3000/images/top.png">
     </div>
 
 </body>
-<script src="https://pedesis.leanapp.cn/js/blogCommon.js"></script>
-<script src="https://pedesis.leanapp.cn/js/blogMain.js"></script>
-<!-- <script src="https://pedesis.leanapp.cn/js/bloghome.js"></script> -->
+<script src="http://localhost:3000/js/blogCommon.js"></script>
+<script src="http://localhost:3000/js/blogMain.js"></script>
+<!-- <script src="http://localhost:3000/js/bloghome.js"></script> -->
 
-<!-- <script color="255,0,0"opacity="0.5" count="99" src="https://pedesis.leanapp.cn/js/canvas-nest.js"></script> -->
+<!-- <script color="255,0,0"opacity="0.5" count="99" src="http://localhost:3000/js/canvas-nest.js"></script> -->
 
 <script>
     //最新文章获取
@@ -128,7 +128,7 @@
         for(var i=0;i<newArticle.length;i++){
             log(blogs);
             newArticle[i].innerText=blogs[i].title;
-            newArticle[i].href="https://pedesis.leanapp.cn/blog/detial?id="+blogs[i].id;
+            newArticle[i].href="http://localhost:3000/blog/detial?id="+blogs[i].id;
         }
      };
      blogNewArticle();
