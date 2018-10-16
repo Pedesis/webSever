@@ -66,6 +66,24 @@ app.get("/blog/plan",function(request, response) {
   var path = 'blog_plan.html';
   sendHtml(path, response);
 })
+//获取pc页
+app.get("/blog/pc",function(request, response) {
+    //console.log(request.query.id);
+    var path = 'blog_pc.html';
+    sendHtml(path, response);
+  })
+//articles页面
+  app.get("/blog/articles",function(request, response) {
+    //console.log(request.query.id);
+    var path = 'blog_articles.html';
+    sendHtml(path, response);
+  })
+//简历页面
+app.get("/blog/resume",function(request, response) {
+    //console.log(request.query.id);
+    var path = 'blog_resume.html';
+    sendHtml(path, response);
+  })
 
 var sendHtml = function(path, response) {
     var fs = require('fs')

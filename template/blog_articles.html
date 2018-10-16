@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pedesis个人博客</title>
+    <link rel="stylesheet" href="http://localhost:3000/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://localhost:3000/css/common.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/blog.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- <a class="blog-name" href="http://localhost:3000/">袁立狄个人博客</a>
+        <span>blog</span> -->
+    </header>
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="http://localhost:3000/">首页</a>
+                </li>
+                <li><a href="http://localhost:3000/blog/articles">技术文章</a>
+                </li>
+                <li><a href="http://localhost:3000/blog/write">写文章</a>
+                </li>
+                <li><a href="http://localhost:3000/blog/pc">pc项目</a>
+                </li>
+                <li><a href="http://localhost:3000/blog/plan">任务管理软件</a>
+                </li>
+            </ul>
+            <div class="nav-input">
+                <input type="search" placeholder="搜索">
+                <img src="http://localhost:3000/images/search.png" alt="">
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class=" container">
+            <div class="main-left">
+                <!-- <div class="slideshow wrap">
+                    <ul>
+                        <li><a href="#">
+                                <img src="images/slide-1.jpg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/slide-2.jpg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/slide-3.jpg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/slide-4.jpg">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="images/slide-1.jpg">
+                            </a></li>
+                    </ul>
+                    <div class="dot">
+                        <a href="javascript:;" class="active"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </div>
+                </div> -->
+                <div class="main-title clearfix">
+                    <span class="title">所有文章</span><span class="time">2018年10月11日 更新</span>
+                </div>
+                <div id="blog-content">
+
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="link-me beside-item">
+                    <h3>关注我</h3>
+                    <ul class="clearfix item-l">
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon1.png" alt="" srcset="">邮箱</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon2.png" alt="" srcset="">微博</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon3.png" alt="" srcset="">微信</a></li>
+                        <li><a href="#"><img src="http://localhost:3000/images/link-icon4.png" alt="" srcset="">QQ</a></li>
+                    </ul>
+                </div>
+                <div class="recent-posts beside-item">
+                    <h3>最新文章</h3>
+                    <ul class="item-l" id="new-articles">
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                        <li>
+                            <div class="dot"></div><a href="#">规定有序列表的起始值。</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="toTop">
+        <img src="http://localhost:3000/images/top.png">
+    </div>
+
+</body>
+<script src="http://localhost:3000/js/blogCommon.js"></script>
+<script src="http://localhost:3000/js/blogMain.js"></script>
+<!-- <script src="http://localhost:3000/js/bloghome.js"></script> -->
+
+<!-- <script color="255,0,0"opacity="0.5" count="99" src="http://localhost:3000/js/canvas-nest.js"></script> -->
+
+<script>
+    //最新文章获取
+    var blogNewArticle=function(){
+        var newArticle=findElements("#new-articles li a");
+        for(var i=0;i<newArticle.length;i++){
+            log(blogs);
+            newArticle[i].innerText=blogs[i].title;
+            newArticle[i].href="http://localhost:3000/blog/detial?id="+blogs[i].id;
+        }
+     };
+     blogNewArticle();
+</script>
+</html>

@@ -130,7 +130,7 @@
     <div id="id-wrap">
         <header>
             <input type="text" placeholder="添加一个任务" class="search">
-            <div class="add"><img src="https://pedesis.leanapp.cn/images/add.png" alt=""></div>
+            <div class="add"><img src="http://localhost:3000/images/add.png" alt=""></div>
         </header>
         
         <div id="id-content">
@@ -247,15 +247,15 @@
     }
     var content = function (val,done) {
         var status="";
-        src="https://pedesis.leanapp.cn/images/yes.png";
+        src="http://localhost:3000/images/yes.png";
         if(done){
             status="done";
-            src="https://pedesis.leanapp.cn/images/yes-a.png";
+            src="http://localhost:3000/images/yes-a.png";
         }
         var o = `<div class="content-item ${status}">
                 <span class="item-con information">${val}</span>
                <img src="${src}" class="content-done"  alt="">
-                <img src="https://pedesis.leanapp.cn/images/de-a.png" class="content-delete"  alt="">
+                <img src="http://localhost:3000/images/de-a.png" class="content-delete"  alt="">
             </div>`
         return o;
     }
@@ -304,21 +304,21 @@ var imgRender=function(node){
         var target = e.target;
         var parentDiv = target.parentNode;  
         if (target.classList.contains("content-done")) {
-                target.src="https://pedesis.leanapp.cn/images/yes-a.png";
+                target.src="http://localhost:3000/images/yes-a.png";
             } else if (target.classList.contains("content-delete")) {
-                target.src="https://pedesis.leanapp.cn/images/de-b.png";
+                target.src="http://localhost:3000/images/de-b.png";
             }
     })
     node.addEventListener("mouseout",function(e){
         var target = e.target;
         var parentDiv = target.parentNode;  
         if (target.classList.contains("content-done")) {
-                target.src="https://pedesis.leanapp.cn/images/yes.png";
+                target.src="http://localhost:3000/images/yes.png";
                 if(parentDiv.classList.contains("done")){
-                    target.src="https://pedesis.leanapp.cn/images/yes-a.png";
+                    target.src="http://localhost:3000/images/yes-a.png";
                 }
             } else if (target.classList.contains("content-delete")) {
-                target.src="https://pedesis.leanapp.cn/images/de-a.png";
+                target.src="http://localhost:3000/images/de-a.png";
             }
     })
    
