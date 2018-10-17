@@ -70,7 +70,7 @@ html,body{height: 100%;overflow: hidden;}
         width:14px; 
         height:14px;
         margin:50px 0 0 5px;
-        background:url(http://localhost:3000/pc-images/musicon.gif) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/musicon.gif) no-repeat;
     }
      .header-nav{
          float: right;
@@ -95,7 +95,7 @@ html,body{height: 100%;overflow: hidden;}
     .narrow{
         width: 21px;
         height: 11px;
-        background: url(http://localhost:3000/pc-images/menuIndicator.png);
+        background: url(https://pedesis.leanapp.cn/pc-images/menuIndicator.png);
         position: absolute;
         left: 50%;
         bottom: -11px;
@@ -132,7 +132,7 @@ html,body{height: 100%;overflow: hidden;}
     }
     /* 第一屏 */
     #contenter>ul>.home{
-        background:url(http://localhost:3000/pc-images/bg1.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bg1.jpg) no-repeat;
     }
     #contenter>ul>.home .home-one{
         width:100%;
@@ -263,7 +263,7 @@ html,body{height: 100%;overflow: hidden;}
     }
     /* 第二屏 */
     #contenter>ul>.course{
-        background:url(http://localhost:3000/pc-images/bg2.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bg2.jpg) no-repeat;
         overflow: hidden;
     }
     #contenter>ul>.course .courtext{
@@ -288,7 +288,7 @@ html,body{height: 100%;overflow: hidden;}
         top:-7px;
         width: 9px;
         height: 410px;
-        background:url(http://localhost:3000/pc-images/plus_row.png) no-repeat;  
+        background:url(https://pedesis.leanapp.cn/pc-images/plus_row.png) no-repeat;  
     }
     #contenter>ul>.course .photo-wall .line:nth-child(1){
         left: -5px;
@@ -328,7 +328,7 @@ html,body{height: 100%;overflow: hidden;}
     }
     /* 图片没加全只加了一张 */
     #contenter>ul>.course .photo-wall .photo .backface{
-        background:url(http://localhost:3000/pc-images/bks.png) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bks.png) no-repeat;
         height: 100%;
         background-position: 50% 50%;
         transition:1s transform;
@@ -339,12 +339,12 @@ html,body{height: 100%;overflow: hidden;}
     #contenter>ul>.course .photo-wall .photo:hover .backface{
         transform: rotateY(180deg);
     }
-    #contenter>ul>.course .plane1{ width:359px; height:283px; background:url(http://localhost:3000/pc-images/plane1.png) no-repeat; position:absolute; left:300px; top:-100px; transition:1s;}
-	#contenter>ul>.course .plane2{ width:309px; height:249px; background:url(http://localhost:3000/pc-images/plane2.png) no-repeat; position:absolute; left:-100px; top:200px; transition:1s;}
-	#contenter>ul>.course .plane3{ width:230px; height:182px; background:url(http://localhost:3000/pc-images/plane3.png) no-repeat; position:absolute; left:300px; top:400px; transition:1s;}
+    #contenter>ul>.course .plane1{ width:359px; height:283px; background:url(https://pedesis.leanapp.cn/pc-images/plane1.png) no-repeat; position:absolute; left:300px; top:-100px; transition:1s;}
+	#contenter>ul>.course .plane2{ width:309px; height:249px; background:url(https://pedesis.leanapp.cn/pc-images/plane2.png) no-repeat; position:absolute; left:-100px; top:200px; transition:1s;}
+	#contenter>ul>.course .plane3{ width:230px; height:182px; background:url(https://pedesis.leanapp.cn/pc-images/plane3.png) no-repeat; position:absolute; left:300px; top:400px; transition:1s;}
     /* 第三屏 */
     #contenter>ul>.works{
-        background:url(http://localhost:3000/pc-images/bg4.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bg4.jpg) no-repeat;
         background-size: 100% 100%;
     }
     #contenter>ul>.works  .works1{
@@ -358,16 +358,16 @@ html,body{height: 100%;overflow: hidden;}
         z-index: 10;
         
     }
-    #contenter>ul>.works .pencel1{ width:180px; height:97px; background:url(http://localhost:3000/pc-images/pencel1.png) no-repeat; position:absolute; transition:1s; left:500px; top:0;}
-	#contenter>ul>.works .pencel2{ width:268px; height:38px; background:url(http://localhost:3000/pc-images/pencel2.png) no-repeat; position:absolute; transition:1s; left:300px; top:250px;}
-	#contenter>ul>.works .pencel3{ width:441px; height:231px; background:url(http://localhost:3000/pc-images/pencel3.png) no-repeat; position:absolute; transition:1s; left:650px; top:300px;}
+    #contenter>ul>.works .pencel1{ width:180px; height:97px; background:url(https://pedesis.leanapp.cn/pc-images/pencel1.png) no-repeat; position:absolute; transition:1s; left:500px; top:0;}
+	#contenter>ul>.works .pencel2{ width:268px; height:38px; background:url(https://pedesis.leanapp.cn/pc-images/pencel2.png) no-repeat; position:absolute; transition:1s; left:300px; top:250px;}
+	#contenter>ul>.works .pencel3{ width:441px; height:231px; background:url(https://pedesis.leanapp.cn/pc-images/pencel3.png) no-repeat; position:absolute; transition:1s; left:650px; top:300px;}
     #contenter>ul>.works .robot{
         width:167px;
         height: 191px;
         position: absolute;
         left:900px;
         top:170px;
-        background: url(http://localhost:3000/pc-images/robot.png) no-repeat;
+        background: url(https://pedesis.leanapp.cn/pc-images/robot.png) no-repeat;
         animation: worksmove 4s linear infinite;
         z-index: 10;
 
@@ -422,7 +422,7 @@ html,body{height: 100%;overflow: hidden;}
         width:32px;
         height:34px;
         margin:10px auto;
-        background:url(http://localhost:3000/pc-images/zoomico.png) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/zoomico.png) no-repeat;
         transition: 1s background;
     }
     #contenter>ul>.works .list>.item:hover img{
@@ -438,7 +438,7 @@ html,body{height: 100%;overflow: hidden;}
 
 /* 第四屏 */
     #contenter>ul>.about{
-        background:url(http://localhost:3000/pc-images/bg3.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bg3.jpg) no-repeat;
     }
     #contenter>ul>.about .about1{
        margin:50px 0 100px 50px; 
@@ -476,10 +476,10 @@ html,body{height: 100%;overflow: hidden;}
         transition: 1s transform;
     }
     #contenter>ul>.about .about3>.about3-img:nth-child(1)>span{
-        background:url(http://localhost:3000/pc-images/about1.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/about1.jpg) no-repeat;
     }
     #contenter>ul>.about .about3>.about3-img:nth-child(2)>span{
-        background:url(http://localhost:3000/pc-images/about4.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/about4.jpg) no-repeat;
     }
     #contenter>ul>.about .about3>.about3-img:hover span{
         transform: scale(1);
@@ -502,7 +502,7 @@ html,body{height: 100%;overflow: hidden;}
     #contenter>ul>.about .line{
         width:357px;
         height: 998px;
-        background: url(http://localhost:3000/pc-images/greenLine.png) no-repeat;
+        background: url(https://pedesis.leanapp.cn/pc-images/greenLine.png) no-repeat;
         position: absolute;
         left:50%;
         top:-100px;
@@ -510,7 +510,7 @@ html,body{height: 100%;overflow: hidden;}
 
     /* 第五屏 */
     #contenter>ul>.team{
-        background:url(http://localhost:3000/pc-images/bg5.jpg) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/bg5.jpg) no-repeat;
     }
     #contenter>ul>.team .team1{
         margin:50px;
@@ -540,7 +540,7 @@ html,body{height: 100%;overflow: hidden;}
         right:0;
     }
     #contenter>ul>.team .team3>ul>li{
-        background:url(http://localhost:3000/pc-images/team.png) no-repeat;
+        background:url(https://pedesis.leanapp.cn/pc-images/team.png) no-repeat;
         width: 118px;
         height: 100%;
         float: left;
