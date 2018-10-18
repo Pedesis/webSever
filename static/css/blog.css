@@ -82,6 +82,7 @@
                 margin-left:10px;
                 float: left;
                 width: 220px;
+                overflow: hidden;
             }
             .blog-cell .blog-cell-left .blog-cell-img img{
                 width: 220px;

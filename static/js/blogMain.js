@@ -6,12 +6,13 @@ var blogTemplate = function(blog) {
     var author = blog.author;
     var content=blog.content;
     var d = new Date(blog.created_time * 1000)
-    var time = d.toLocaleString()
+    var time = d.toLocaleString();
+    var commentsLength=blog.comments.length;
     var t = `
     <div class="blog-cell">
     <div class="blog-cell-left">
         <a class="blog-cell-img" href="blog/detial?id=${id}" data-id="${id}">
-            <img src="https://pedesis.leanapp.cn/images/slide-1.jpg">
+            <img src="https://pedesis.leanapp.cn/images/slide-${id}.jpg">
         </a>
     </div>
     <div class="blog-cell-right">
@@ -21,7 +22,7 @@ var blogTemplate = function(blog) {
         
         <div class="blog-cell-content">${content}</div>
         <p class="blog-cell-info">
-            <span>${author}</span><span>发布时间:${time}</span><span>评论</span>
+            <span>${author}</span><span>发布时间:${time}</span><span>评论(${commentsLength})</span>
         </p>
     </div>
 </div>
